@@ -1,0 +1,9 @@
+*.filters
+*.htm
+*.o
+*.user
+
+.vs/
+.vscode/
+Debug/
+Release/
