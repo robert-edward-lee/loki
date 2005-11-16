@@ -2,8 +2,8 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="7.10"
-	Name="SmallSingleton"
-	ProjectGUID="{78536B46-8307-4AE5-933E-0CADE2887AFB}"
+	Name="CompareSmallObj"
+	ProjectGUID="{0A98B714-818C-4DD3-A07C-BDD16399F362}"
 	Keyword="Win32Proj">
 	<Platforms>
 		<Platform
@@ -19,8 +19,8 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="..\include;..\include\loki"
-				PreprocessorDefinitions="WIN32;_DEBUG;_CONSOLE"
+				AdditionalIncludeDirectories="..\include;..\include\loki;..\..\..\boost_1_33_0\"
+				PreprocessorDefinitions="WIN32;_DEBUG;_CONSOLE;COMPARE_BOOST_POOL"
 				StringPooling="TRUE"
 				MinimalRebuild="TRUE"
 				BasicRuntimeChecks="3"
@@ -34,7 +34,7 @@
 				Name="VCCustomBuildTool"/>
 			<Tool
 				Name="VCLinkerTool"
-				OutputFile="$(OutDir)/SmallSingleton.exe"
+				OutputFile="$(OutDir)/CompareSmallObj.exe"
 				LinkIncremental="2"
 				GenerateDebugInformation="TRUE"
 				ProgramDatabaseFile="$(OutDir)/test.pdb"
@@ -69,8 +69,8 @@
 			CharacterSet="2">
 			<Tool
 				Name="VCCLCompilerTool"
-				AdditionalIncludeDirectories="..\include;..\include\loki"
-				PreprocessorDefinitions="WIN32;NDEBUG;_CONSOLE"
+				AdditionalIncludeDirectories="..\include;..\include\loki;..\..\..\boost_1_33_0\"
+				PreprocessorDefinitions="WIN32;NDEBUG;_CONSOLE;COMPARE_BOOST_POOL"
 				StringPooling="TRUE"
 				RuntimeLibrary="4"
 				RuntimeTypeInfo="TRUE"
@@ -82,7 +82,7 @@
 				Name="VCCustomBuildTool"/>
 			<Tool
 				Name="VCLinkerTool"
-				OutputFile="$(OutDir)/SmallSingleton.exe"
+				OutputFile="$(OutDir)/CompareSmallObj.exe"
 				LinkIncremental="1"
 				GenerateDebugInformation="TRUE"
 				SubSystem="1"
@@ -117,7 +117,7 @@
 		<Filter
 			Name="Source Files"
 			Filter="cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx"
-			UniqueIdentifier="{BFF4AEA3-8EE0-4150-A20E-4A2B41BEF2F2}">
+			UniqueIdentifier="{D98BEADF-A77F-476b-BAA7-41B12B269FBF}">
 			<File
 				RelativePath="..\..\src\Singleton.cpp">
 				<FileConfiguration
@@ -149,7 +149,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath=".\SmallSingleton.cpp">
+				RelativePath=".\SmallObjBench.cpp">
 				<FileConfiguration
 					Name="Debug|Win32">
 					<Tool
@@ -163,11 +163,14 @@
 						AdditionalIncludeDirectories="../../include/loki"/>
 				</FileConfiguration>
 			</File>
+			<File
+				RelativePath=".\timer.h">
+			</File>
 		</Filter>
 		<Filter
 			Name="Header Files"
 			Filter="h;hpp;hxx;hm;inl;inc;xsd"
-			UniqueIdentifier="{1EC2C51F-E58B-4aca-BA46-1652627A1C16}">
+			UniqueIdentifier="{7DF39E90-C717-4886-A90C-D18708A77099}">
 			<File
 				RelativePath="..\..\include\loki\Singleton.h">
 			</File>
@@ -181,7 +184,50 @@
 		<Filter
 			Name="Resource Files"
 			Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx"
-			UniqueIdentifier="{7382056C-47B1-45eb-85F8-CB0489ED355F}">
+			UniqueIdentifier="{DFC2006D-7B0E-48f3-907F-2433F0935110}">
+		</Filter>
+		<Filter
+			Name="Boost_Pool"
+			Filter="">
+			<File
+				RelativePath="..\..\..\boost_1_33_0\boost\pool\detail\ct_gcd_lcm.hpp">
+			</File>
+			<File
+				RelativePath="..\..\..\boost_1_33_0\boost\pool\detail\gcd_lcm.hpp">
+			</File>
+			<File
+				RelativePath="..\..\..\boost_1_33_0\boost\pool\detail\guard.hpp">
+			</File>
+			<File
+				RelativePath="..\..\..\boost_1_33_0\boost\pool\detail\mutex.hpp">
+			</File>
+			<File
+				RelativePath="..\..\..\boost_1_33_0\boost\pool\object_pool.hpp">
+			</File>
+			<File
+				RelativePath="..\..\..\boost_1_33_0\boost\pool\pool.hpp">
+			</File>
+			<File
+				RelativePath="..\..\..\boost_1_33_0\boost\pool\pool_alloc.hpp">
+			</File>
+			<File
+				RelativePath="..\..\..\boost_1_33_0\boost\pool\detail\pool_construct.inc">
+			</File>
+			<File
+				RelativePath="..\..\..\boost_1_33_0\boost\pool\detail\pool_construct_simple.inc">
+			</File>
+			<File
+				RelativePath="..\..\..\boost_1_33_0\boost\pool\poolfwd.hpp">
+			</File>
+			<File
+				RelativePath="..\..\..\boost_1_33_0\boost\pool\simple_segregated_storage.hpp">
+			</File>
+			<File
+				RelativePath="..\..\..\boost_1_33_0\boost\pool\detail\singleton.hpp">
+			</File>
+			<File
+				RelativePath="..\..\..\boost_1_33_0\boost\pool\singleton_pool.hpp">
+			</File>
 		</Filter>
 	</Files>
 	<Globals>
