@@ -11,11 +11,11 @@
 //     without express or implied warranty.
 ////////////////////////////////////////////////////////////////////////////////
 
-// $Header: /cvsroot/loki-lib/loki/test/SmallObj/SmallSingleton.cpp,v 1.10 2005/11/13 13:39:15 syntheticpp Exp $
+// $Header: /cvsroot/loki-lib/loki/test/SmallObj/SmallObjSingleton.cpp,v 1.1 2006/01/05 21:05:19 syntheticpp Exp $
 
 
-#include "../../include/loki/SmallObj.h"
-#include "../../include/loki/Singleton.h"
+#include <loki/SmallObj.h>
+#include <loki/Singleton.h>
 #include <iostream>
 
 // define DO_EXTRA_LOKI_TESTS in src/SmallObj.cpp to get 
@@ -30,9 +30,7 @@ using namespace std;
 // ----------------------------------------------------------------------------
 
 typedef Loki::SmallValueObject< LOKI_DEFAULT_THREADING_NO_OBJ_LEVEL,
-    LOKI_DEFAULT_CHUNK_SIZE, LOKI_MAX_SMALL_OBJECT_SIZE,
-    LOKI_DEFAULT_OBJECT_ALIGNMENT, 
-    Loki::LongevityLifetime::DieAsSmallObjectParent
+    512, 32, 4, Loki::LongevityLifetime::DieAsSmallObjectParent
 >
 SmallObjectParent;
 
@@ -355,8 +353,8 @@ int main()
     cout << endl << endl;
 #endif
     
-#if defined(__BORLANDC__) || defined(__GNUC__) || defined(_MSC_VER)
-    system("pause"); 
+#if defined(__BORLANDC__) || defined(_MSC_VER)
+    system("PAUSE");
 #endif
 
     cout << endl<< endl << "now leaving main" << endl;
@@ -367,7 +365,19 @@ int main()
 
 // ----------------------------------------------------------------------------
 
-// $Log: SmallSingleton.cpp,v $
+// $Log: SmallObjSingleton.cpp,v $
+// Revision 1.1  2006/01/05 21:05:19  syntheticpp
+// rename Small->SmallObj
+//
+// Revision 1.13  2006/01/05 09:55:09  syntheticpp
+// assert, include path, and virtual ~ patches by Lukas Fittl
+//
+// Revision 1.12  2006/01/04 23:54:30  syntheticpp
+// remove system(PAUSE) for gcc, Thanks to Lukas Fittl
+//
+// Revision 1.11  2005/12/08 21:03:02  rich_sposato
+// Changed template parameter values for SmallObject allocator.
+//
 // Revision 1.10  2005/11/13 13:39:15  syntheticpp
 // add removed tests with NoDestroy plolicy
 //
