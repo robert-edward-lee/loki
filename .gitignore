@@ -1,6 +1,7 @@
 *.exe
 *.filters
 *.htm
+*.lo
 *.o
 *.user
 
